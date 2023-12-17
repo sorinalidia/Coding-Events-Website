@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class HelloController {
 //    @GetMapping("hello")
-//    @ResponseBody
 //    public String hello(){
 //        return "Hello, Spring!";
 //    }
@@ -30,15 +29,7 @@ public class HelloController {
     }
 
     @GetMapping("form")
-    @ResponseBody
     public String helloForm(){
-        return "<html>" +
-                "<body>" +
-                "<form action='hello' method='post'>" +
-                "<input type='text' name='name'>" +
-                "<input type='submit' value='Greet me!'>" +
-                "</form>" +
-                "</body>" +
-                "</html>";
+        return "form";
     }
 }
