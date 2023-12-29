@@ -1,5 +1,6 @@
 package org.launchcode.hellospring.controllers;
 
+import org.launchcode.hellospring.data.EventData;
 import org.launchcode.hellospring.models.Event;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,11 +15,10 @@ import java.util.List;
 @Controller
 @RequestMapping("events")
 public class EventController {
-    private static List<Event> events=new ArrayList<>();
     @GetMapping
     public String displayAllEvents(Model model){
         model.addAttribute("title","All Events");
-        model.addAttribute("events",events);
+        model.addAttribute("events", EventData.getAll());
         return "events/index";
     }
 
@@ -32,7 +32,7 @@ public class EventController {
     //lives at /events/create
     @PostMapping("create")
     public String createEvent(@RequestParam String eventName,@RequestParam String eventDescription){
-        events.add(new Event(eventName,eventDescription));
+        EventData.add(new Event(eventName,eventDescription));
         return "redirect:";
     }
 }
