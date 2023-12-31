@@ -40,7 +40,7 @@ public class EventCategoryController {
             return "eventCategories/create";
         }
         eventCategoryRepository.save(newEventCategory);
-        return "redirect:";
+        return "redirect:/eventCategories";
     }
 
 }
