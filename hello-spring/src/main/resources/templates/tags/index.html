@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="~{fragments :: head}"></head>
+<body class="container">
+
+<header th:replace="~{fragments :: header}"></header>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Tag</th>
+    </tr>
+    </thead>
+    <tr th:each="tag : ${tags}">
+        <td>
+            <a th:text="${tag.displayName}" th:href="'/tags?name=' + ${tag.name}"></a>
+        </td>
+
+    </tr>
+</table>
+
+</body>
+</html>
