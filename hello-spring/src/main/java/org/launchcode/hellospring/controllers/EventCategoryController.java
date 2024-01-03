@@ -2,7 +2,6 @@ package org.launchcode.hellospring.controllers;
 
 import jakarta.validation.Valid;
 import org.launchcode.hellospring.data.EventCategoryRepository;
-import org.launchcode.hellospring.models.Event;
 import org.launchcode.hellospring.models.EventCategory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
